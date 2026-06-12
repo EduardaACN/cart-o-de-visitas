@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminaria</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: white;
+        color: #000000;
+        transition: 0.3s;
+    }
+</style>
+
+<body>
+<h1> tema escuro</h1>
+<p>clique no botão</p>
+
+<div>
+    <button id="botao-tema">
+    trocar tema
+    </button>
+</div>
+<img src="https://cdn-icons-png.flaticon.com/512/2333/2333432.png" id="Luminaria" alt="Luminaria" style="width: 150px;">
+</body>
+<script>
+
+  //  let tema_claro = true; // começa com valor verdadeiro (true)
+  //  function trocartema() {
+  //      tema_claro = !tema_claro; // troca de true pra false e de false pra true
+  //      if (tema_claro) {
+  //          document.body.style.backgroundColor = '#fff'; // plano de fundo branco
+  //          document.body.style.color = '#000000'; // cor do texto preta
+  //      }else{
+  //          document.body.style.backgroundColor = '#000000'; // cor de fundo preta
+  //          document.body.style.color = '#fff'; // cor do texto branca
+  //      }
+  //  }
+  //  document.getElementById('botao-tema').addEventListener('click', trocartema);
+
+</script>
+<script>
+    let button = document.getElementById('botao-tema');
+
+    function alternar() {
+       //seleciona a imagem usando id
+        let imagem = document.getElementById('Luminaria');
+
+        //se a imagem esta oculta
+        if (imagem.style.display === 'none') {
+            imagem.style.display = 'block'; // mostra a imagem
+            button.textContent = 'esconder'; // troca texto botão
+        }else{ // se a imagem estiver visivel
+            imagem.style.display = 'none'; // esconde imagem
+            button.textContent = 'mostrar'; // troca o texto do botão
+        }
+    }
+    button.addEventListener('click', alternar);
+</script>
+</html>
