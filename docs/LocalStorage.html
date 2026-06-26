@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="BR-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>aula sobre LocalStorage</title>
+</head>
+<body>
+
+</body>
+<script type="application/javascript">
+    function salvarValor (event) {
+        event.preventDefault();
+        const chave = document.getElementById('input-chave').value;
+        const valor = document.getElementById('input-valor').value;
+        localStorage.setItem(chave, valor);
+    }
+    function mostrarValores () {
+        let array = [];
+        let keys = Object.entries(localStorage);
+        for (let key in keys) {
+            array.push(`${key}=${localStorage.getItem(key)}`);
+        }
+        document.getElementById('paragrafo-valores').innerHTML = array.join('<br/>');
+    }
+    function limparValores(){
+        console.log('limpado!');
+        localStorage.clear();
+        mostrarValores();
+    }
+
+    document.getElementById('button-enviar').addEventListener('click', salvarValor);
+    document.getElementById('button-enviar').addEventListener('click', mostrarValores);
+    document.getElementById('button-enviar').addEventListener('click', limparValores);
+    mostrarValores();
+</script>
+</html>
